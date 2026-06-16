@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "f46cbcc2-7fbf-40d2-86b3-945f87ec406c",
+      "name": "Srivaatsav",
+      "email": "srivaatsavreddy45@gmail.com",
+      "password": "$2b$10$pzNWpg1ezuVRd7tGs.YjCumoU5AXczyicP1espSgpDVgnl7TGmKzm",
+      "avatar": "S"
+    }
+  ],
+  "resources": {
+    "f46cbcc2-7fbf-40d2-86b3-945f87ec406c": {
+      "subjects": [],
+      "assignments": [],
+      "timetable": [],
+      "grades": [],
+      "notes": [],
+      "goals": [],
+      "attendance": []
+    }
+  }
+}
