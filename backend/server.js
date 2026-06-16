@@ -5,6 +5,8 @@ const bcrypt=require('bcryptjs');
 const {v4:uuid}=require('uuid');
 const fs=require('fs');
 const app=express();
+const PORT = process.env.PORT || 8080;
+
 app.use(cors());app.use(express.json());
 const SECRET='study-secret'; const DB='db.json';
 function db(){if(!fs.existsSync(DB))fs.writeFileSync(DB,JSON.stringify({users:[],resources:{}}));return JSON.parse(fs.readFileSync(DB));}
@@ -19,4 +21,7 @@ app.post('/api/'+r,auth,(req,res)=>{let d=db();let item={id:uuid(),...req.body};
 app.put('/api/'+r+'/:id',auth,(req,res)=>{let d=db();let a=d.resources[req.user.id][r];let i=a.findIndex(x=>x.id===req.params.id);if(i>=0)a[i]={...a[i],...req.body};save(d);res.json({ok:true,item:a[i]});});
 app.delete('/api/'+r+'/:id',auth,(req,res)=>{let d=db();d.resources[req.user.id][r]=d.resources[req.user.id][r].filter(x=>x.id!==req.params.id);save(d);res.json({ok:true});});
 });
-app.listen(8080,()=>console.log('API on 8080'));
+
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
+});
