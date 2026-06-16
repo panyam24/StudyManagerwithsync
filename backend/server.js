@@ -6,7 +6,6 @@ const {v4:uuid}=require('uuid');
 const fs=require('fs');
 const app=express();
 const PORT = process.env.PORT || 8080;
-const API_URL = import.meta.env.VITE_API_URL;
 
 app.use(cors());app.use(express.json());
 const SECRET='study-secret'; const DB='db.json';
